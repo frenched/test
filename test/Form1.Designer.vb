@@ -36,6 +36,7 @@ Partial Class Form1
         showLoginBtn = New Button()
         showRegBtn = New Button()
         regPanel = New Panel()
+        passMatchIdentifier = New Label()
         regShowConPass = New Button()
         regShowPass = New Button()
         regConfirmPass = New TextBox()
@@ -169,6 +170,7 @@ Partial Class Form1
         ' 
         ' regPanel
         ' 
+        regPanel.Controls.Add(passMatchIdentifier)
         regPanel.Controls.Add(regShowConPass)
         regPanel.Controls.Add(regShowPass)
         regPanel.Controls.Add(regConfirmPass)
@@ -185,6 +187,16 @@ Partial Class Form1
         regPanel.Name = "regPanel"
         regPanel.Size = New Size(599, 360)
         regPanel.TabIndex = 4
+        ' 
+        ' passMatchIdentifier
+        ' 
+        passMatchIdentifier.AutoSize = True
+        passMatchIdentifier.ForeColor = Color.RoyalBlue
+        passMatchIdentifier.Location = New Point(448, 127)
+        passMatchIdentifier.Name = "passMatchIdentifier"
+        passMatchIdentifier.Size = New Size(34, 15)
+        passMatchIdentifier.TabIndex = 6
+        passMatchIdentifier.Text = "OOO"
         ' 
         ' regShowConPass
         ' 
@@ -263,8 +275,8 @@ Partial Class Form1
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(702, 489)
-        Controls.Add(loginPanel)
         Controls.Add(regPanel)
+        Controls.Add(loginPanel)
         Name = "Form1"
         Text = "Form1"
         loginPanel.ResumeLayout(False)
@@ -296,5 +308,6 @@ Partial Class Form1
     Friend WithEvents regShowPass As Button
     Friend WithEvents regHidePass As Button
     Friend WithEvents regHideConPass As Button
+    Friend WithEvents passMatchIdentifier As Label
 
 End Class

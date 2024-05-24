@@ -230,6 +230,25 @@ Public Class Form1
         regHideConPass.Hide()
     End Sub
 
+    Private Sub passMatch(sender As Object, e As EventArgs) Handles regPass.TextChanged, regConfirmPass.TextChanged
+        If regPass.Text = regConfirmPass.Text Then
+            passMatchIdentifier.ForeColor = Color.Green
+            passMatchIdentifier.Text = "PASSWORD MATCHED"
+            regBtn.Enabled = True
+        Else
+            passMatchIdentifier.Text = "PASSWORD UNMATCHED"
+            passMatchIdentifier.ForeColor = Color.Red
+            regBtn.Enabled = False
+        End If
+    End Sub
+
+    Private Sub canRegister(sender As Object, e As EventArgs) Handles regPass.TextChanged, regConfirmPass.TextChanged, regFirstName.TextChanged, regLastName.TextChanged, regEmail.TextChanged, regSID.TextChanged
+        If regPass.Text = "Password" Or regPass.Text = "" Or regConfirmPass.Text = "Confirm Password" Or regConfirmPass.Text = "" Or regFirstName.Text = "First Name" Or regFirstName.Text = "" Or regLastName.Text = "Last Name" Or regLastName.Text = "" Or regEmail.Text = "Email" Or regEmail.Text = "" Or regSID.Text = "SID (EX. 24-12345)" Or regSID.Text = "" Or passMatchIdentifier.Text = "PASSWORD UNMATCHED" Then
+            regBtn.Enabled = False
+        Else
+            regBtn.Enabled = True
+        End If
+    End Sub
 
 End Class
 
