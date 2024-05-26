@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class LOGIN_PAGE
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -45,6 +45,7 @@ Partial Class Form1
         regLastName = New TextBox()
         regHidePass = New Button()
         regHideConPass = New Button()
+        forgotBtn = New Button()
         loginPanel.SuspendLayout()
         regPanel.SuspendLayout()
         SuspendLayout()
@@ -104,9 +105,9 @@ Partial Class Form1
         Label5.AutoSize = True
         Label5.Location = New Point(193, 86)
         Label5.Name = "Label5"
-        Label5.Size = New Size(63, 15)
+        Label5.Size = New Size(65, 15)
         Label5.TabIndex = 1
-        Label5.Text = "Username:"
+        Label5.Text = "Student ID:"
         ' 
         ' Label6
         ' 
@@ -128,7 +129,7 @@ Partial Class Form1
         ' 
         ' loginBtn
         ' 
-        loginBtn.Location = New Point(287, 181)
+        loginBtn.Location = New Point(287, 169)
         loginBtn.Name = "loginBtn"
         loginBtn.Size = New Size(75, 23)
         loginBtn.TabIndex = 2
@@ -137,6 +138,7 @@ Partial Class Form1
         ' 
         ' loginPanel
         ' 
+        loginPanel.Controls.Add(forgotBtn)
         loginPanel.Controls.Add(showLoginBtn)
         loginPanel.Controls.Add(showRegBtn)
         loginPanel.Controls.Add(logUser)
@@ -270,14 +272,23 @@ Partial Class Form1
         regHideConPass.Text = "H"
         regHideConPass.UseVisualStyleBackColor = True
         ' 
-        ' Form1
+        ' forgotBtn
+        ' 
+        forgotBtn.Location = New Point(247, 198)
+        forgotBtn.Name = "forgotBtn"
+        forgotBtn.Size = New Size(115, 23)
+        forgotBtn.TabIndex = 5
+        forgotBtn.Text = "Forgot Password"
+        forgotBtn.UseVisualStyleBackColor = True
+        ' 
+        ' LOGIN_PAGE
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(702, 489)
-        Controls.Add(regPanel)
         Controls.Add(loginPanel)
-        Name = "Form1"
+        Controls.Add(regPanel)
+        Name = "LOGIN_PAGE"
         Text = "Form1"
         loginPanel.ResumeLayout(False)
         loginPanel.PerformLayout()
@@ -300,7 +311,6 @@ Partial Class Form1
     Friend WithEvents regPanel As Panel
     Friend WithEvents showLoginBtn As Button
     Friend WithEvents showRegBtn As Button
-    Friend WithEvents regEmail As TextBox
     Friend WithEvents regLastName As TextBox
     Friend WithEvents regConfirmPass As TextBox
     Friend WithEvents regPass As TextBox
@@ -309,5 +319,7 @@ Partial Class Form1
     Friend WithEvents regHidePass As Button
     Friend WithEvents regHideConPass As Button
     Friend WithEvents passMatchIdentifier As Label
+    Public WithEvents regEmail As TextBox
+    Friend WithEvents forgotBtn As Button
 
 End Class

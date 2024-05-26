@@ -1,13 +1,15 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+﻿Imports System.Net.Mail
+Imports System.Web
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports MySql.Data.MySqlClient
 
 
 
 
-Public Class Form1
+Public Class LOGIN_PAGE
     Private connectionString As String = "server=localhost;userid=root;password=;database=prac"
     Private connection As MySqlConnection
-
+    Public Shared email As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             connection = New MySqlConnection(connectionString)
@@ -37,7 +39,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub RegisterData(SID As String, FName As String, LName As String, Email As String, Password As String)
+    Public Sub RegisterData(SID As String, FName As String, LName As String, Email As String, Password As String)
         Try
             connection.Open()
 
@@ -94,11 +96,15 @@ Public Class Form1
 
     Private Sub regBtn_Click(sender As Object, e As EventArgs) Handles regBtn.Click
         RegisterData(regSID.Text, regFirstName.Text, regLastName.Text, regEmail.Text, regPass.Text)
+        email = regEmail.Text
+        EMAIL_VERIFICATION.Show()
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         If ValidateLogin(logUser.Text, logPass.Text) Then
             MsgBox("Login Successful!")
+            Me.Hide()
+            NGD.Show()
         Else
             MsgBox("Invalid Username/Password.")
         End If
@@ -250,6 +256,9 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub forgotBtn_Click(sender As Object, e As EventArgs) Handles forgotBtn.Click
+        ForgotPassword.Show()
+    End Sub
 End Class
 
 
