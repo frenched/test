@@ -10,6 +10,7 @@ Public Class LOGIN_PAGE
     Private connectionString As String = "server=localhost;userid=root;password=;database=prac"
     Private connection As MySqlConnection
     Public Shared email As String
+    Public Shared StudentID As String = ""
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             connection = New MySqlConnection(connectionString)
@@ -97,14 +98,23 @@ Public Class LOGIN_PAGE
     Private Sub regBtn_Click(sender As Object, e As EventArgs) Handles regBtn.Click
         RegisterData(regSID.Text, regFirstName.Text, regLastName.Text, regEmail.Text, regPass.Text)
         email = regEmail.Text
+        regEmail.Text = "Email"
+        regSID.Text = "SID (EX. 24-12345)"
+        regFirstName.Text = "First Name"
+        regLastName.Text = "Last Name"
+        regPass.Text = "Password"
+        regConfirmPass.Text = "Confirm Password"
         EMAIL_VERIFICATION.Show()
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         If ValidateLogin(logUser.Text, logPass.Text) Then
             MsgBox("Login Successful!")
+            LOGIN_PAGE.StudentID = logUser.Text
+            logUser.Text = ""
+            logPass.Text = ""
             Me.Hide()
-            NGD.Show()
+            NGD_Dashboard.Show()
         Else
             MsgBox("Invalid Username/Password.")
         End If

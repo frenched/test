@@ -56,25 +56,18 @@ Public Class ForgotPassword
 
         Dim connectionString As String = "server=localhost;userid=root;password=;database=prac"
 
-        ' SQL query to update a specific column in a specific row
         Dim query As String = "UPDATE user_data SET password = @password WHERE email = @email"
 
-        ' Create a connection to the database
         Using connection As New MySqlConnection(connectionString)
             Try
-                ' Open the connection
                 connection.Open()
 
-                ' Create a command object
                 Using command As New MySqlCommand(query, connection)
-                    ' Define the parameters and their values
                     command.Parameters.AddWithValue("@password", password)
                     command.Parameters.AddWithValue("@email", email)
 
-                    ' Execute the update command
                     Dim rowsAffected As Integer = command.ExecuteNonQuery()
 
-                    ' Output the result
                     If rowsAffected > 0 Then
                         Console.WriteLine("Update successful!")
                     Else
@@ -92,4 +85,5 @@ Public Class ForgotPassword
         Me.Close()
         LOGIN_PAGE.Show()
     End Sub
+
 End Class

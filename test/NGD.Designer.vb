@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class NGD
+Partial Class NGD_Dashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,48 +22,10 @@ Partial Class NGD
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        ynaresBlgdBtn = New Label()
-        adminBldgBtn = New Label()
-        courtBtn = New Label()
         Label1 = New Label()
-        prrcBldgBtn = New Label()
+        currentUser = New Label()
+        logOutBtn = New Button()
         SuspendLayout()
-        ' 
-        ' ynaresBlgdBtn
-        ' 
-        ynaresBlgdBtn.BackColor = Color.Transparent
-        ynaresBlgdBtn.Cursor = Cursors.Hand
-        ynaresBlgdBtn.Font = New Font("Castellar", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ynaresBlgdBtn.ForeColor = Color.Black
-        ynaresBlgdBtn.Location = New Point(405, 183)
-        ynaresBlgdBtn.Name = "ynaresBlgdBtn"
-        ynaresBlgdBtn.Size = New Size(95, 192)
-        ynaresBlgdBtn.TabIndex = 1
-        ynaresBlgdBtn.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' adminBldgBtn
-        ' 
-        adminBldgBtn.BackColor = Color.Transparent
-        adminBldgBtn.Cursor = Cursors.Hand
-        adminBldgBtn.Font = New Font("Castellar", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        adminBldgBtn.ForeColor = SystemColors.Control
-        adminBldgBtn.Location = New Point(271, 140)
-        adminBldgBtn.Name = "adminBldgBtn"
-        adminBldgBtn.Size = New Size(52, 170)
-        adminBldgBtn.TabIndex = 1
-        adminBldgBtn.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' courtBtn
-        ' 
-        courtBtn.BackColor = Color.Transparent
-        courtBtn.Cursor = Cursors.Hand
-        courtBtn.Font = New Font("Castellar", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        courtBtn.ForeColor = Color.Black
-        courtBtn.Location = New Point(405, 88)
-        courtBtn.Name = "courtBtn"
-        courtBtn.Size = New Size(121, 73)
-        courtBtn.TabIndex = 1
-        courtBtn.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label1
         ' 
@@ -76,42 +38,43 @@ Partial Class NGD
         Label1.TabIndex = 1
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' prrcBldgBtn
+        ' currentUser
         ' 
-        prrcBldgBtn.BackColor = Color.Transparent
-        prrcBldgBtn.Cursor = Cursors.Hand
-        prrcBldgBtn.Font = New Font("Castellar", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        prrcBldgBtn.ForeColor = Color.Black
-        prrcBldgBtn.Location = New Point(271, 386)
-        prrcBldgBtn.Name = "prrcBldgBtn"
-        prrcBldgBtn.Size = New Size(196, 80)
-        prrcBldgBtn.TabIndex = 1
-        prrcBldgBtn.TextAlign = ContentAlignment.MiddleCenter
+        currentUser.Location = New Point(12, 9)
+        currentUser.Name = "currentUser"
+        currentUser.Size = New Size(228, 26)
+        currentUser.TabIndex = 2
+        currentUser.Text = "Label2"
         ' 
-        ' NGD
+        ' logOutBtn
+        ' 
+        logOutBtn.Location = New Point(707, 12)
+        logOutBtn.Name = "logOutBtn"
+        logOutBtn.Size = New Size(75, 23)
+        logOutBtn.TabIndex = 3
+        logOutBtn.Text = "Log Out"
+        logOutBtn.UseVisualStyleBackColor = True
+        ' 
+        ' NGD_Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources._123
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(794, 489)
-        Controls.Add(adminBldgBtn)
-        Controls.Add(prrcBldgBtn)
+        Controls.Add(logOutBtn)
+        Controls.Add(currentUser)
         Controls.Add(Label1)
-        Controls.Add(courtBtn)
-        Controls.Add(ynaresBlgdBtn)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.FixedSingle
-        Name = "NGD"
+        Name = "NGD_Dashboard"
         Text = "NGD"
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents ynaresBlgdBtn As Label
-    Friend WithEvents adminBldgBtn As Label
-    Friend WithEvents courtBtn As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents prrcBldgBtn As Label
+    Friend WithEvents currentUser As Label
+    Friend WithEvents logOutBtn As Button
 End Class

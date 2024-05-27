@@ -33,6 +33,7 @@ Partial Class LOGIN_PAGE
         regBtn = New Button()
         loginBtn = New Button()
         loginPanel = New Panel()
+        forgotBtn = New Button()
         showLoginBtn = New Button()
         showRegBtn = New Button()
         regPanel = New Panel()
@@ -45,7 +46,6 @@ Partial Class LOGIN_PAGE
         regLastName = New TextBox()
         regHidePass = New Button()
         regHideConPass = New Button()
-        forgotBtn = New Button()
         loginPanel.SuspendLayout()
         regPanel.SuspendLayout()
         SuspendLayout()
@@ -88,6 +88,7 @@ Partial Class LOGIN_PAGE
         ' 
         logPass.Location = New Point(262, 131)
         logPass.Name = "logPass"
+        logPass.PasswordChar = "•"c
         logPass.Size = New Size(100, 23)
         logPass.TabIndex = 0
         ' 
@@ -151,6 +152,15 @@ Partial Class LOGIN_PAGE
         loginPanel.Name = "loginPanel"
         loginPanel.Size = New Size(599, 389)
         loginPanel.TabIndex = 3
+        ' 
+        ' forgotBtn
+        ' 
+        forgotBtn.Location = New Point(247, 198)
+        forgotBtn.Name = "forgotBtn"
+        forgotBtn.Size = New Size(115, 23)
+        forgotBtn.TabIndex = 5
+        forgotBtn.Text = "Forgot Password"
+        forgotBtn.UseVisualStyleBackColor = True
         ' 
         ' showLoginBtn
         ' 
@@ -272,22 +282,13 @@ Partial Class LOGIN_PAGE
         regHideConPass.Text = "H"
         regHideConPass.UseVisualStyleBackColor = True
         ' 
-        ' forgotBtn
-        ' 
-        forgotBtn.Location = New Point(247, 198)
-        forgotBtn.Name = "forgotBtn"
-        forgotBtn.Size = New Size(115, 23)
-        forgotBtn.TabIndex = 5
-        forgotBtn.Text = "Forgot Password"
-        forgotBtn.UseVisualStyleBackColor = True
-        ' 
         ' LOGIN_PAGE
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(702, 489)
-        Controls.Add(loginPanel)
         Controls.Add(regPanel)
+        Controls.Add(loginPanel)
         Name = "LOGIN_PAGE"
         Text = "Form1"
         loginPanel.ResumeLayout(False)
